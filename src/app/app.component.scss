@@ -1,0 +1,25 @@
+ion-content {
+    --background: var(--cs-gradient);
+    --color: var(--cs-text-light, #fff);
+    --border-color: transparent;
+}
+
+ion-item {
+    --background-hover: transparent;
+    --background-activated: transparent;
+    --background: transparent;
+    --background-focused: transparent;
+    --ripple-color: transparent;
+  
+    [slot=start] {
+      margin-inline-end: 0 !important;
+    }
+  }
+
+  ion-label {
+    --background-hover: transparent;
+    --background-activated: transparent;
+    --background: transparent;
+    --background-focused: transparent;
+    --ripple-color: transparent;
+  }

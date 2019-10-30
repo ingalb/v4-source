@@ -1,0 +1,76 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title color="tertiary">
+      Lajme
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div *ngIf="!isLoaded">
+    <ion-list>
+      <ion-item *ngFor="let item of arrayOne(20)">
+        <ion-avatar slot="start">
+          <ion-skeleton-text animated></ion-skeleton-text>
+        </ion-avatar>
+        <ion-label>
+          <h2>
+            <ion-skeleton-text animated style="width: 90%"></ion-skeleton-text>
+          </h2>
+          <p>
+            <ion-skeleton-text animated style="width: 80%"></ion-skeleton-text>
+          </p>
+        </ion-label>
+      </ion-item>
+    </ion-list>
+
+  </div>
+
+  <div *ngIf="!isLoaded">
+    <ion-list>
+      <ion-item *ngFor="let item of arrayOne(20)">
+        <ion-avatar slot="start">
+          <ion-skeleton-text animated></ion-skeleton-text>
+        </ion-avatar>
+        <ion-label>
+          <h2>
+            <ion-skeleton-text animated style="width: 90%"></ion-skeleton-text>
+          </h2>
+          <p>
+            <ion-skeleton-text animated style="width: 80%"></ion-skeleton-text>
+          </p>
+        </ion-label>
+      </ion-item>
+    </ion-list>
+
+  </div>
+
+
+  <div *ngIf="isLoaded">
+    <ion-list>
+      <ion-item *ngFor="let item of news;" [routerLink]="item.id">
+        <ion-avatar slot="start">
+          <img src="http://www.fkvllaznia.net/main/vllaznia/_files/newspublish/{{item.image}}"
+            style="background: #F2F2F2;">
+        </ion-avatar>
+        <ion-label class="ion-text-capitalize">
+          <h2>{{ item.title }}</h2>
+          <p>{{ item.summary }}</p>
+        </ion-label>
+      </ion-item>
+    </ion-list>
+  </div>
+
+
+  <!--
+  <ion-infinite-scroll threshold="100px" (ionInfinite)="loadNews($event)">
+    <ion-infinite-scroll-content
+      loadingSpinner="bubbles"
+      loadingText="Loading more data...">
+    </ion-infinite-scroll-content>
+  </ion-infinite-scroll>
+-->
+</ion-content>
