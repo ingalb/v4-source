@@ -23,6 +23,11 @@ export class HomePage {
       });
   }
 
+ /*
+ getHomeMatches(): void {
+    this.
+  }
+*/
   ngOnInit() {
     this.getHomepageNews();
   }

@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { News } from '../models/news';
 import { Observable, of } from 'rxjs';
 import { catchError } from 'rxjs/operators';
@@ -13,6 +13,13 @@ export class VllazniaService {
   apiNews = 'http://www.fkvllaznia.net/main/app/';
 
   constructor(private http: HttpClient) { }
+
+  // Http Headers
+  httpOptions = {
+    headers: new HttpHeaders({
+      'Content-Type': 'application/json'
+    })
+  }
 
   getHomeNews (): Observable<News[]> {
     return this.http.get<News[]>(this.apiNews + 'lajme.php?nr=3')
