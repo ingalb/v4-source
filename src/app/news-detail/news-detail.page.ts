@@ -27,7 +27,7 @@ export class NewsDetailPage implements OnInit {
     this.NewsService.getInfoNews(this.newsId).subscribe(news => {
       this.news = news; 
       this.title = this.news[0].title;
-      this.imgsrc = "http://www.fkvllaznia.net/main/vllaznia/_files/newspublish/"+this.news[0].image;
+      this.imgsrc = "https://www.fkvllaznia.net/main/vllaznia/_files/newspublish/"+this.news[0].image;
       this.summary = this.news[0].summary;
       this.data = this.news[0].data;
       this.article = this.news[0].content;

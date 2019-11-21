@@ -10,7 +10,7 @@ import { catchError } from 'rxjs/operators';
 export class VllazniaService {
 
   //apiUrl = 'http://api.albaniasoccer.com/';
-  apiNews = 'http://www.fkvllaznia.net/main/app/';
+  apiNews = 'https://www.fkvllaznia.net/main/app/';
 
   constructor(private http: HttpClient) { }
 
