@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { News } from '../models/news';
 import { VllazniaService } from '../api/vllaznia.service';
 import { ActivatedRoute } from '@angular/router';
-import { SocialSharing } from '@ionic-native/social-sharing/ngx';
+//import { SocialSharing } from '@ionic-native/social-sharing/ngx';
 
 @Component({
   selector: 'app-news-detail',
@@ -21,7 +21,7 @@ export class NewsDetailPage implements OnInit {
 
   isLoaded = false;
 
-  constructor(private NewsService: VllazniaService, private activatedRoute: ActivatedRoute, private socialSharing: SocialSharing) { }
+  constructor(private NewsService: VllazniaService, private activatedRoute: ActivatedRoute) { }
 
   loadInfoNews(){
     this.NewsService.getInfoNews(this.newsId).subscribe(news => {
@@ -37,11 +37,11 @@ export class NewsDetailPage implements OnInit {
 
   shareNews(){
   
-    this.socialSharing.share('Lexo lajmin per Vllaznine', this.title, this.imgsrc, 'http://www.fkvllaznia.com/lajme/'+this.newsId+'-mobile.html').then(() => {
-      console.log("shared OK");
-    }).catch(() => {
-      console.log("error on shared");
-    });
+    // this.socialSharing.share('Lexo lajmin per Vllaznine', this.title, this.imgsrc, 'https://www.fkvllaznia.com/lajme/'+this.newsId+'-mobile.html').then(() => {
+    //   console.log("shared OK");
+    // }).catch(() => {
+    //   console.log("error on shared");
+    // });
   
   }
 

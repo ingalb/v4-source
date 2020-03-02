@@ -7,6 +7,7 @@ import { catchError } from 'rxjs/operators';
 @Injectable({
   providedIn: 'root'
 })
+
 export class VllazniaService {
 
   //apiUrl = 'http://api.albaniasoccer.com/';

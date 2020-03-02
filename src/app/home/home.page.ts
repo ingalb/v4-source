@@ -1,9 +1,8 @@
 import { Component } from '@angular/core';
-import { Observable } from 'rxjs/Observable';
-import { HttpClient } from '@angular/common/http';
 import { LoadingController } from '@ionic/angular';
 import { News } from '../models/news';
 import { VllazniaService } from '../api/vllaznia.service';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-home',
