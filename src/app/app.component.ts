@@ -19,7 +19,7 @@ export class AppComponent {
     {
       title: 'Lajme',
       url: '/news',
-      icon: 'paper'
+      icon: 'trophy'
     },
     {
       title: 'Klubi',
