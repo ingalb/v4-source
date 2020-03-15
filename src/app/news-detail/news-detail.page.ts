@@ -48,7 +48,6 @@ export class NewsDetailPage implements OnInit {
   ngOnInit() {
     this.newsId = this.activatedRoute.snapshot.paramMap.get('id');
     this.loadInfoNews();
-    //this.isLoaded = true;
   }
 
 }

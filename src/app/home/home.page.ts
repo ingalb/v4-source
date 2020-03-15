@@ -1,5 +1,5 @@
-import { Component } from '@angular/core';
-import { LoadingController } from '@ionic/angular';
+import { Component, ViewChild } from '@angular/core';
+import { LoadingController, IonSlides } from '@ionic/angular';
 import { News } from '../models/news';
 import { VllazniaService } from '../api/vllaznia.service';
 import { Observable } from 'rxjs';
@@ -10,6 +10,8 @@ import { Observable } from 'rxjs';
   styleUrls: ['home.page.scss'],
 })
 export class HomePage {
+
+  @ViewChild('homeSlider', { static: true }) protected slides: IonSlides;
   
   news: News[];
   constructor(private NewsService: VllazniaService, public loadingController: LoadingController) { }
@@ -19,6 +21,9 @@ export class HomePage {
       .subscribe(news => {
         console.log(news);
         this.news = news;
+        this.slides.update().then(() => {
+          console.log("updated");
+        });
       });
   }
 
@@ -29,7 +34,15 @@ export class HomePage {
 */
   ngOnInit() {
     this.getHomepageNews();
+    console.log("On Init");
   }
+
+  ionViewWillEnter() {
+    //this.getHomepageNews();
+    console.log("ionViewDidLoad");
+  }
+
+
 
 
 }

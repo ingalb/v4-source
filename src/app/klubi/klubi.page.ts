@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { IonSlides} from '@ionic/angular';
+import { Component, OnInit, ViewChild } from '@angular/core';
+
 
 @Component({
   selector: 'app-klubi',
@@ -7,6 +9,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class KlubiPage implements OnInit {
 
+  @ViewChild('klubiSlider', { static: true }) protected slideKlubi: IonSlides;
   contentInit = true;
 
   constructor() { }
@@ -20,10 +23,12 @@ export class KlubiPage implements OnInit {
     if(ev.detail.value==="historia")
     {
       this.contentInit = true;
+      this.slideKlubi.slideTo(0);
     }
     else
     {
       this.contentInit = false;
+      this.slideKlubi.slideTo(1);
     }
   }
 

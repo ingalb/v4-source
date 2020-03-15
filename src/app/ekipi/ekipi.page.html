@@ -10,5 +10,20 @@
 </ion-header>
 
 <ion-content>
-test
+
+<ion-list>
+  <ion-item *ngFor="let player of ekipi" 
+  [routerLink]="player.id" detail="false"
+  ng-if="player.larguar != 1" >
+    <ion-avatar slot="start">
+      <img src="https://www.albaniasoccer.com/{{ player.foto }}">
+    </ion-avatar>
+    <ion-label>
+      <h3>{{ player.emri }} {{ player.mbiemri}}</h3>
+      <p>{{ player.pozicioni }}</p>
+    </ion-label>
+    <ion-note slot="end" *ngIf="player.type == 'player'" class="bluza">{{ player.nr }}</ion-note>
+  </ion-item>
+</ion-list>
+
 </ion-content>

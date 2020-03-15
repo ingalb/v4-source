@@ -19,8 +19,9 @@
         </ion-segment-button>
       </ion-segment>       
         
-      
-<div *ngIf="contentInit" class="ion-padding">
+<ion-slides #klubiSlider pager="false">  
+<ion-slide>
+<div class="ion-padding">
 <p class="ion-text-justify">Futbolli shqiptar i ka fillimet e hershme që pas pavarësisë së Shqipërisë. Në shumë qytete të vendit filloi të luhej një lojë e re sportive me emrin "futboll". Në Shkodër, Vlorë, Korçë e në disa qytete të tjera filluan të zhvilloheshin ndeshje të tilla futbolli. Në Shkodër shumë lagje të vjetra shkodrane filluan të ndesheshin ndërmjet tyre duke krijuar një interes të veçantë në popullsinë e asokohe.</p><p class="ion-text-center"><img src="https://www.fkvllaznia.net/main/image/vllaznia1913.jpg" alt="Vllaznia 1913" width="480" height="330"></p> <p class="ion-text-center"><strong><em>Foto e vitit 1913 mbas nje ndeshje futbolli të zhvilluar ne Shkodër</em></strong></p>
 <p class="ion-text-justify">Duke parë interesimin e madh ndaj këtij sporti filluan te krijoheshin grupe të vogla sportive të cilet më vonë do të krijojnë një Shoqeri të vetme sportive me emrin <strong>Vllaznia</strong>. Shoqeria Vllaznia ështe themeluar me 16 shkurt te vitit 1919, ku nismetaret ishin anetaret e shoqates "Mustafa Pasha" dhe "Vaso Pasha" të cilët u bashkuan duke krjuar njo shoqeri te vetme me emrin "Vllaznia". Programi i saj kuptohet nuk ishte vetëm sportiv, por pikërisht në vitet e mëvonshme do ta bënte ketë emër mjaft të njohur, jo vetem ne Shqipëri por edhe më gjerë. <strong>Ndër themeluesit e shoqërisë "Vllaznia" mund të përmendim emrat e Hile Mosit që u zgjodh kryetar, Hysen Draçini nënkryetar e Jonuz Tafili sekretar.</strong> Ndërsa kryetari i degës së gjimnastikës u zgjodh Kolë Margjini. Kjo shoqëri do të luante një rol shumë të madh në zhvillimin e llojeve te ndryshme te sportit në vendin tonë. Madje pikerisht në Shkodër e kanë fillesën sporte si futbolli, çiklizmi, atletika, hipizmi, etj. Kjo shoqëri do të ishte e para shoqëri e ketij lloji ne vendin tonë.</p>
 <p class="ion-text-center"> <img src="https://www.fkvllaznia.net/main/image/1945vll.jpg" alt="Vllaznia 1945" width="480" height="340"></p><p class="ion-text-center"><strong><em>Ekipi i Vllaznise ne vitin 1945 </em></strong></p>
@@ -44,9 +45,10 @@
 <p class="ion-text-center"><img src="https://www.fkvllaznia.net/main/image/vllaznia2008.jpg" alt="Vllaznia 2007-2008" width="500" height="360" align="middle"></p> <p class="ion-text-center"><em><strong>Vllaznia fituese e Kupes së Shqipërisë 2008</strong></em></p>
 <p class="ion-text-justify">Ne 2008 Vllaznia merr pjese ne kupen Uefa ku arrin te kualifikohet ne turin e pare kurse ne turin e dyte Vllaznia luan kunder skuadres italiane Napoli të cilat i humb që të dyja. Ne sezonet ne vazhdim Vllaznia merr pjese rregullisht ne Kupen Uefa ku ben paraqitje dinjitoze duke kaluar turin e pare eliminator. Në gusht te viti 2011, jep doreheqjen presidenti i Vllaznise Valter Fushaj. Me pas Bashkia Shkoder kthen klubin Vllaznia ne SH.A, ku 100% te aksioneve i kalojne Bashkisë Shkodër dhe presidenti i klubit emërohet kryetari i Bashkisë Shkodër Lorenc Luka.</p>
 </div>
+</ion-slide>
 
-<div *ngIf="!contentInit">
-  
+<ion-slide>
+<div>  
     <p class="ion-padding">Klubi i futbollit Vllaznia është një ndër klubet më të titulluar ne Shqipëri, duke fituar 9 herë kampionatin shqiptar.Vllaznia ka qenë gjithmonë ndër ekipet pretendente per fitim e trofeve kombëtare duke u renditur me shumë se 11 herë në vendin e dytë të kampionatit kombëtar. Vllaznia luajtur 14 finale te Kupës së Shqipërise duke fituar 6 here si edhe ka fituar 2 herë Superkupen e Shqipërisë dhe humbur 2 te tilla.</p>
     <ion-card>
       <ion-card-header color="secondary">
@@ -87,5 +89,6 @@
       </ion-card-content>
     </ion-card>
  </div>
-
+ </ion-slide>
+</ion-slides>
 </ion-content>

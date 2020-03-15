@@ -1,7 +1,7 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { News } from '../models/news';
 import { VllazniaService } from '../api/vllaznia.service';
-//import { IonInfiniteScroll } from '@ionic/angular';
+import { IonInfiniteScroll, IonVirtualScroll } from '@ionic/angular';
 
 @Component({
   selector: 'app-news',
@@ -14,7 +14,8 @@ export class NewsPage{
   news: News[];
   isLoaded = false;
 
-  //@ViewChild(IonInfiniteScroll) infiniteScroll: IonInfiniteScroll;
+  @ViewChild(IonInfiniteScroll, { static: true }) infiniteScroll: IonInfiniteScroll;
+  @ViewChild(IonVirtualScroll, { static: true }) virtualScroll: IonVirtualScroll;
 
   constructor(private NewsService: VllazniaService) { }
 
@@ -23,20 +24,21 @@ export class NewsPage{
     this.loadNews();
   }
  
-  loadNews(loadMore = false, event?) {
-    if (loadMore) {
+  loadNews(event?) {
+    if (event) {
       this.offset += 10;
     }
-    this.NewsService.getAllNews().subscribe(news => {
-    //this.news = [...this.news, ...news];
-    console.log(this.isLoaded);
-    console.log(news);
+    this.NewsService.getNrNews(this.offset).subscribe(news => {
     this.news = news;
     this.isLoaded = true;
-    console.log(this.isLoaded);
-      if (event) {
-        event.target.complete();
-      }
+    if(event)
+    {
+      event.target.complete();
+    }
+  
+    if (this.news.length == 1000) {
+      event.target.disabled = true;
+    }
  
     });
   }

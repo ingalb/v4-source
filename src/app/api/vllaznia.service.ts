@@ -10,8 +10,10 @@ import { catchError } from 'rxjs/operators';
 
 export class VllazniaService {
 
-  //apiUrl = 'http://api.albaniasoccer.com/';
+  APP_ID = 1;
+  apiUrl = 'http://api.albaniasoccer.com/';
   apiNews = 'https://www.fkvllaznia.net/main/app/';
+  url: any;
 
   constructor(private http: HttpClient) { }
 
@@ -38,6 +40,14 @@ export class VllazniaService {
       );
   }
 
+  getNrNews (from: number): Observable<News[]> {
+    return this.http.get<News[]>(this.apiNews + 'lajme.php?from=' + from )
+      .pipe(
+        //tap(_ => this.log('fetched news')),
+        catchError(this.handleError('getHomeNews', []))
+      );
+  }
+
   getInfoNews (newsId : number): Observable<News[]> {
     return this.http.get<News[]>(this.apiNews + 'lajme.php?id=' + newsId)
       .pipe(
@@ -45,6 +55,18 @@ export class VllazniaService {
         catchError(this.handleError('getHomeNews', []))
       );
   }
+
+
+  /* */
+  //getAllEkipi(sezoniId, ekipiId) {
+  //  $http.get(URL_APP+'ekipi.php',{params:{id: sezoniId, ekipi: ekipiId, app_id: APP_ID}}).success(
+  getAllEkipi(sezoniId : string , ekipiId: string): Observable<any> {
+      return this.http.get(this.apiUrl+'ekipi.php', { params:{ id: sezoniId, ekipi: ekipiId}})
+        .pipe(
+          //tap(_ => this.log('fetched news')),
+          catchError(this.handleError('getEkipiAll', []))
+        );
+    }
 
   private handleError<T> (operation = 'operation', result?: T) {
     return (error: any): Observable<T> => {
