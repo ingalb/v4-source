@@ -10,16 +10,16 @@
 </ion-header>
 
 <ion-content>
-    <ion-segment mode="md" (ionChange)="segmentChanged($event)" value="historia"  color="secondary">
-        <ion-segment-button  mode="md" value="historia" checked>
+    <ion-segment mode="md" (ionChange)="segmentChanged($event)" [(ngModel)]="segment" color="secondary">
+        <ion-segment-button  mode="md" value="0">
           <ion-label mode="md">Historia</ion-label>
         </ion-segment-button>
-        <ion-segment-button  mode="md" value="trofete">
+        <ion-segment-button  mode="md" value="1">
           <ion-label mode="md">Trofete</ion-label>
         </ion-segment-button>
       </ion-segment>       
         
-<ion-slides #klubiSlider pager="false">  
+<ion-slides #klubiSlider pager="false" (ionSlideDidChange)="slideChanged()">  
 <ion-slide>
 <div class="ion-padding">
 <p class="ion-text-justify">Futbolli shqiptar i ka fillimet e hershme që pas pavarësisë së Shqipërisë. Në shumë qytete të vendit filloi të luhej një lojë e re sportive me emrin "futboll". Në Shkodër, Vlorë, Korçë e në disa qytete të tjera filluan të zhvilloheshin ndeshje të tilla futbolli. Në Shkodër shumë lagje të vjetra shkodrane filluan të ndesheshin ndërmjet tyre duke krijuar një interes të veçantë në popullsinë e asokohe.</p><p class="ion-text-center"><img src="https://www.fkvllaznia.net/main/image/vllaznia1913.jpg" alt="Vllaznia 1913" width="480" height="330"></p> <p class="ion-text-center"><strong><em>Foto e vitit 1913 mbas nje ndeshje futbolli të zhvilluar ne Shkodër</em></strong></p>

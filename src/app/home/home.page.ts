@@ -38,7 +38,7 @@ export class HomePage {
   }
 
   ionViewWillEnter() {
-    //this.getHomepageNews();
+    this.getHomepageNews();
     console.log("ionViewDidLoad");
   }
 

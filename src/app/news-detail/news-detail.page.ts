@@ -14,7 +14,7 @@ export class NewsDetailPage implements OnInit {
   news: News[];
   newsId : any;
   title : any;
-  imgsrc : any;
+  imgsrc = "https://www.fkvllaznia.net/main/vllaznia/_files/newspublish/lajme-vllaznia.gif" ;
   summary: any;
   data: any;
   article: any;
@@ -47,6 +47,10 @@ export class NewsDetailPage implements OnInit {
 
   ngOnInit() {
     this.newsId = this.activatedRoute.snapshot.paramMap.get('id');
+    this.loadInfoNews();
+  }
+
+  ionViewWillEnter() {
     this.loadInfoNews();
   }
 

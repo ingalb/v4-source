@@ -10,7 +10,7 @@
 </ion-header>
 
 <ion-content>
-  <ion-slides #homeSlider dynamicBullets="true">
+  <ion-slides #homeSlider pager="true">
   <ion-slide *ngFor="let b of news">
       <ion-card color="secondary" class="welcome-card" [routerLink]="['/news/', b.id]">
         <img src="https://www.fkvllaznia.net/main/vllaznia/_files/newspublish/{{ b.image }}" alt="" />

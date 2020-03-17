@@ -9,27 +9,21 @@ import { Component, OnInit, ViewChild } from '@angular/core';
 })
 export class KlubiPage implements OnInit {
 
-  @ViewChild('klubiSlider', { static: true }) protected slideKlubi: IonSlides;
-  contentInit = true;
+  @ViewChild('klubiSlider', { static: true }) slideKlubi: IonSlides;
+  segment = 0;
 
   constructor() { }
 
   ngOnInit() {
   }
 
-  segmentChanged(ev: any) {
+  async segmentChanged(ev: any) {
+    await this.slideKlubi.slideTo(this.segment);
+  }
 
-    console.log('Segment changed', ev.detail.value);
-    if(ev.detail.value==="historia")
-    {
-      this.contentInit = true;
-      this.slideKlubi.slideTo(0);
-    }
-    else
-    {
-      this.contentInit = false;
-      this.slideKlubi.slideTo(1);
-    }
+  async slideChanged()
+  {
+    this.segment = await this.slideKlubi.getActiveIndex();
   }
 
 }

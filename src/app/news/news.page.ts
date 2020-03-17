@@ -47,6 +47,11 @@ export class NewsPage{
     return Array(n);
   }
 
+  ionViewWillEnter()
+  {
+    this.loadNews();
+  }
+
 
 
 }

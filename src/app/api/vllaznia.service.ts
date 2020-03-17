@@ -11,7 +11,7 @@ import { catchError } from 'rxjs/operators';
 export class VllazniaService {
 
   APP_ID = 1;
-  apiUrl = 'http://api.albaniasoccer.com/';
+  apiUrl = 'https://superliga-app.herokuapp.com/';
   apiNews = 'https://www.fkvllaznia.net/main/app/';
   url: any;
 

@@ -27,6 +27,11 @@ const routes: Routes = [
     path: 'ekipi',
     loadChildren: () => import('./ekipi/ekipi.module').then(m => m.EkipiPageModule)
   },
+  {
+    path: 'ekipi/:id',
+    loadChildren: () => import('./ekipi-detail/ekipi-detail.module').then( m => m.EkipiDetailPageModule)
+  },
+
 ];
 
 @NgModule({

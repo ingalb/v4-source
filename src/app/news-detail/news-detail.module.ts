@@ -21,7 +21,6 @@ const routes: Routes = [
     FormsModule,
     IonicModule,
     IonicHeaderParallaxModule,
-    //ParallaxHeaderDirective,
     RouterModule.forChild(routes)
   ],
   declarations: [NewsDetailPage]
