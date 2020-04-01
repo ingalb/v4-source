@@ -27,6 +27,7 @@
     "@ionic/angular": "^5.0.4",
     "cordova-android": "^8.1.0",
     "cordova-ios": "5.0.1",
+    "cordova-plugin-ionic": "^5.4.6",
     "cordova-plugin-x-socialsharing": "^5.6.0",
     "core-js": "^2.5.4",
     "es6-promise-plugin": "^4.2.2",
@@ -81,7 +82,15 @@
       "cordova-plugin-ionic-webview": {
         "ANDROID_SUPPORT_ANNOTATIONS_VERSION": "27.+"
       },
-      "cordova-plugin-ionic-keyboard": {}
+      "cordova-plugin-ionic-keyboard": {},
+      "cordova-plugin-ionic": {
+        "APP_ID": "3c5b285c",
+        "CHANNEL_NAME": "vllaznia",
+        "UPDATE_METHOD": "auto",
+        "MAX_STORE": "2",
+        "MIN_BACKGROUND_DURATION": "30",
+        "UPDATE_API": "https://api.ionicjs.com"
+      }
     },
     "platforms": [
       "ios",
