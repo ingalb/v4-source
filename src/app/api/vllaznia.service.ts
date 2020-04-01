@@ -24,7 +24,7 @@ export class VllazniaService {
     })
   }
 
-  getHomeNews (): Observable<News[]> {
+  getHomeNews(): Observable<News[]> {
     return this.http.get<News[]>(this.apiNews + 'lajme.php?nr=3')
       .pipe(
         //tap(_ => this.log('fetched news')),
@@ -32,7 +32,7 @@ export class VllazniaService {
       );
   }
 
-  getAllNews (): Observable<News[]> {
+  getAllNews(): Observable<News[]> {
     return this.http.get<News[]>(this.apiNews + 'lajme.php')
       .pipe(
         //tap(_ => this.log('fetched news')),
@@ -40,15 +40,15 @@ export class VllazniaService {
       );
   }
 
-  getNrNews (from: number): Observable<News[]> {
-    return this.http.get<News[]>(this.apiNews + 'lajme.php?from=' + from )
+  getNrNews(from: number): Observable<News[]> {
+    return this.http.get<News[]>(this.apiNews + 'lajme.php?from=' + from)
       .pipe(
         //tap(_ => this.log('fetched news')),
         catchError(this.handleError('getHomeNews', []))
       );
   }
 
-  getInfoNews (newsId : number): Observable<News[]> {
+  getInfoNews(newsId: number): Observable<News[]> {
     return this.http.get<News[]>(this.apiNews + 'lajme.php?id=' + newsId)
       .pipe(
         //tap(_ => this.log('fetched news')),
@@ -57,18 +57,23 @@ export class VllazniaService {
   }
 
 
-  /* */
-  //getAllEkipi(sezoniId, ekipiId) {
-  //  $http.get(URL_APP+'ekipi.php',{params:{id: sezoniId, ekipi: ekipiId, app_id: APP_ID}}).success(
-  getAllEkipi(sezoniId : string , ekipiId: string): Observable<any> {
-      return this.http.get(this.apiUrl+'ekipi.php', { params:{ id: sezoniId, ekipi: ekipiId}})
-        .pipe(
-          //tap(_ => this.log('fetched news')),
-          catchError(this.handleError('getEkipiAll', []))
-        );
-    }
+  /* Get Team*/
+  getTeam(sezoniId: string, ekipiId: string): Observable<any> {
+    return this.http.get(this.apiUrl + 'ekipi.php', { params: { id: sezoniId, ekipi: ekipiId } })
+      .pipe(
+        catchError(this.handleError('getEkipiAll', []))
+      );
+  }
+//  $http.get(URL_APP+'ekipi.php',{params:{id: 'superliga', ekipi: 13, app_id: APP_ID}})
 
-  private handleError<T> (operation = 'operation', result?: T) {
+  getPlayerInfo(sezoniId: string, ekipiId: string): Observable<any> {
+    return this.http.get(this.apiUrl + 'ekipi.php', { params: { id: sezoniId, ekipi: ekipiId } })
+      .pipe(
+        catchError(this.handleError('getEkipiAll', []))
+      );
+  }
+
+  private handleError<T>(operation = 'operation', result?: T) {
     return (error: any): Observable<T> => {
 
       // TODO: send the error to remote logging infrastructure

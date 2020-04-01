@@ -26,7 +26,7 @@ export class NewsPage{
  
   loadNews(event?) {
     if (event) {
-      this.offset += 10;
+      this.offset += 20;
     }
     this.NewsService.getNrNews(this.offset).subscribe(news => {
     this.news = news;

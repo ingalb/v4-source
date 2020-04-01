@@ -8,7 +8,45 @@
     </ion-title>
   </ion-toolbar>
 </ion-header>
-
 <ion-content>
+
+  <div ng-class="anim" class="animated">
+    <div>
+      <img class="full-image lojtari-img lajmi-img" src="https://www.albaniasoccer.com/{{ item.foto }}">
+      <span class="bluza">{{ item.nr }}</span>
+      <div class="lojtari-emri button-bar">
+        <button class="button icon-left ion-chevron-left button-clear button-light width-10"></button>
+        <span style="color:#FFF;" class="button button-clear button-light lojtari-titull">{{ item.emri }}
+          {{ item.mbiemri}}</span>
+        <button class="button icon-right ion-chevron-right button-clear button-light width-10"></button>
+      </div>
+    </div>
+
+    <div ng-if="item.type == 'player'" class="row item item-divider bar bar-positive statistika">
+      <div class="col col-20 col-center"><span class="ikona ndeshje2x"></span>
+        {{ (item.ndeshje != NULL) ? item.ndeshje : 0}}</div>
+      <div class="col col-20 col-center"><span class="ikona gol2x"></span> {{item.gola}}</div>
+      <div class="col col-20 col-center"><span class="ikona verdhe2x"></span> {{item.kv}}</div>
+      <div class="col col-20 col-center"><span class="ikona vk2x"></span> {{item.k2v}}</div>
+      <div class="col col-20 col-center"><span class="ikona kuq2x"></span> {{item.kk}}</div>
+    </div>
+    <div>
+      <div class="row rnk">
+        <div class="col col-50">Pozicioni</div>
+        <div class="col col-right">{{item.pozicioni}}</div>
+      </div>
+      <div class="row rnk">
+        <div class="col col-50">Dit&euml;lindja</div>
+        <div class="col col-right">{{item.ditelindja}}</div>
+      </div>
+      <div class="row rnk">
+        <div class="col col-50">N&euml;nshtet&euml;sia</div>
+        <div class="col col-right">{{item.nenshtetsia}}</div>
+      </div>
+      <div *ngIf="item.note" id="lojtaridesc" class="item row small-klasifikimi" [innerHTML]="item.note">
+
+      </div>
+    </div>
+  </div>
 
 </ion-content>

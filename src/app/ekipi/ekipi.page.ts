@@ -20,9 +20,8 @@ export class EkipiPage implements OnInit {
 
   loadEkipi()
   {
-    this.EkipiService.getAllEkipi(this.sezoniId, this.ekipiId).subscribe(EkipiList => {
+    this.EkipiService.getTeam(this.sezoniId, this.ekipiId).subscribe(EkipiList => {
        this.ekipi = EkipiList;
-       console.log(this.ekipi);
     });
   }
 
